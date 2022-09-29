@@ -73,14 +73,6 @@ def query(URL, DATA, HEADERS):
 
     return data_buffer, data
 
-    """
-	response = requests.post(url=URL, data=DATA, headers=HEADERS)
-	data = response.text
-	data_buffer= response.text[(data.find(b'\x00\x00\x00\x01\x00\x00') + 8):]
-
-	return data_buffer, response
-	"""
-
 
 def reqpay(macs, noise=0, signal=100):
 
@@ -92,8 +84,6 @@ def reqpay(macs, noise=0, signal=100):
 
     message = Request.SerializeToString()
     size = struct.pack(">h", len(message))  # big-endian Signed Short (16bit)
-
-    header + size + message
     return header + size + message
 
 
@@ -179,8 +169,6 @@ def banner():
 
     print("\n github.com/zadewg/GS-LOC/ :: Ofensive Intelligence Gathering")
     print("\n Apple Geolocation Services RE. Database Scraper     \n\n\n\n")
-
-    time.sleep(2)
 
 
 if __name__ == "__main__":
