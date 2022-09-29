@@ -17,7 +17,7 @@ HEADERS = {
     "User-Agent": "locationd/1756.1.15 CFNetwork/711.5.6 Darwin/14.0.0",
 }
 
-URL = SERVICE_URL.format(SERVICE_SHOST[random.choice([True, False])])
+URL = SERVICE_URL.format(SERVICE_SHOST[1])
 
 
 class Header:
